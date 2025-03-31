@@ -13,16 +13,16 @@ USE StudentManagement;CREATE TABLE Students (
 SHOW TABLES;
 INSERT INTO Students (Name, Gender, Age, Grade, MathScore, ScienceScore, EnglishScore) 
 VALUES 
-('Divya', 'F', 16, 'A', 90, 85, 88),
-('Neela', 'F', 17, 'B', 78, 80, 82),
-('Manju', 'F', 15, 'A', 92, 89, 95),
-('Meha', 'F', 16, 'C', 70, 72, 75),
-('Nisha', 'F', 17, 'B', 80, 78, 85),
-('Umar', 'M', 16, 'A', 95, 92, 90),
-('Vishnupriya', 'F', 15, 'B', 85, 83, 87),
-('Durai', 'M', 17, 'C', 60, 65, 62),
-('Dinesh', 'M', 16, 'B', 78, 75, 80),
-('Lavanya', 'F', 15, 'A', 91, 94, 96);
+('John Doe', 'M', 16, 'A', 90, 85, 88),
+('Jane Smith', 'F', 17, 'B', 78, 80, 82),
+('Alice Brown', 'F', 15, 'A', 92, 89, 95),
+('Bob Johnson', 'M', 16, 'C', 70, 72, 75),
+('Charlie Davis', 'M', 17, 'B', 80, 78, 85),
+('Emma Wilson', 'F', 16, 'A', 95, 92, 90),
+('Liam Martinez', 'M', 15, 'B', 85, 83, 87),
+('Sophia Lee', 'F', 17, 'C', 60, 65, 62),
+('Oliver Harris', 'M', 16, 'B', 78, 75, 80),
+('Mia Clark', 'F', 15, 'A', 91, 94, 96);
 SELECT * FROM Students;
 SELECT 
     AVG(MathScore) AS Avg_Math, 
