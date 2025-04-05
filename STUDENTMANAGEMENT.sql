@@ -13,16 +13,16 @@ USE StudentManagement;CREATE TABLE Students (
 SHOW TABLES;
 INSERT INTO Students (Name, Gender, Age, Grade, MathScore, ScienceScore, EnglishScore) 
 VALUES 
-('John Doe', 'M', 16, 'A', 90, 85, 88),
-('Jane Smith', 'F', 17, 'B', 78, 80, 82),
-('Alice Brown', 'F', 15, 'A', 92, 89, 95),
-('Bob Johnson', 'M', 16, 'C', 70, 72, 75),
-('Charlie Davis', 'M', 17, 'B', 80, 78, 85),
-('Emma Wilson', 'F', 16, 'A', 95, 92, 90),
-('Liam Martinez', 'M', 15, 'B', 85, 83, 87),
-('Sophia Lee', 'F', 17, 'C', 60, 65, 62),
-('Oliver Harris', 'M', 16, 'B', 78, 75, 80),
-('Mia Clark', 'F', 15, 'A', 91, 94, 96);
+('Divya', 'F', 16, 'A', 90, 85, 88),
+('Neela', 'F', 17, 'B', 78, 80, 82),
+('Manju', 'F', 15, 'A', 92, 89, 95),
+('Meha', 'F', 16, 'C', 70, 72, 75),
+('Nisha', 'F', 17, 'B', 80, 78, 85),
+('Umar', 'M', 16, 'A', 95, 92, 90),
+('Vishnupriya', 'F', 15, 'B', 85, 83, 87),
+('Durai', 'M', 17, 'C', 60, 65, 62),
+('Dinesh', 'M', 16, 'B', 78, 75, 80),
+('Lavanya', 'F', 15, 'A', 91, 94, 96);
 SELECT * FROM Students;
 SELECT 
     AVG(MathScore) AS Avg_Math, 
@@ -91,6 +91,29 @@ SELECT Courses.course_name
 FROM Courses 
 LEFT JOIN Enrolments ON Courses.course_id = Enrolments.course_id
 WHERE Enrolments.enrolment_id IS NULL;
+SELECT MAX(math_score) FROM Students;
+
+USE STUDENTMANAGEMENT;
+SELECT * FROM Students;
+SELECT name, 
+       (MathScore +ScienceScore +EnglishScore) AS total_score
+FROM Students
+ORDER BY total_score DESC
+LIMIT 5;
+
+SELECT AVG(MathScore) AS average_math_core
+FROM Students
+WHERE MathScore > 70;
+SELECT AVG(total) AS average_total
+FROM (
+  SELECT (MathScore+ScienceScore+EnglishScore) AS total
+  FROM Students
+) AS totals
+WHERE total BETWEEN 200 AND 250;
+SELECT MAX(MathScore) AS second_highest_math_score
+FROM Students
+WHERE MathScore < (SELECT MAX(MathScore) FROM Students);
+
 
 
 
